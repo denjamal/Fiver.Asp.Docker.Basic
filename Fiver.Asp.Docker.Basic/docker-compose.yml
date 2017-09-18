@@ -1,0 +1,10 @@
+﻿version: '3.3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fiver/basic
+    ports:
+      - "8080:80"

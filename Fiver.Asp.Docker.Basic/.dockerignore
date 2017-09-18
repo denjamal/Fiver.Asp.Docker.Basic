@@ -1,6 +1,3 @@
 /bin
 /obj
-.dockerignore
-.dockerignore.build
-Dockerfile
-Dockerfile.build
+node_modules

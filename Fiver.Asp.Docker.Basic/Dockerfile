@@ -1,12 +1,12 @@
 # Build Stage
-FROM microsoft/aspnetcore-build:2 as build-env
-WORKDIR /app
+FROM microsoft/aspnetcore-build as build-env
+WORKDIR /source
 COPY . .
 RUN dotnet restore
-RUN dotnet publish -o /publish
+RUN dotnet publish -o /publish --configuration Release
 
 # Publish Stage
-FROM microsoft/aspnetcore:2
-WORKDIR /publish
+FROM microsoft/aspnetcore
+WORKDIR /app
 COPY --from=build-env /publish .
 ENTRYPOINT ["dotnet", "Fiver.Asp.Docker.Basic.dll"]
