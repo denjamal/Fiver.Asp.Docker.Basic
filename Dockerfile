@@ -1,8 +1,13 @@
 # Build Stage
-FROM microsoft/aspnetcore-build as build-env
-WORKDIR /source
+FROM microsoft/aspnetcore-build AS build-env
+
+WORKDIR /src
 COPY . .
 RUN dotnet restore
+RUN dotnet build
+RUN dotnet test ./Fiver.Asp.Docker.Basic.Tests
+
+WORKDIR /src/Fiver.Asp.Docker.Basic
 RUN dotnet publish -o /publish --configuration Release
 
 # Publish Stage
