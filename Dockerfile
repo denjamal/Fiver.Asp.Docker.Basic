@@ -5,6 +5,7 @@ WORKDIR /src
 COPY . .
 RUN dotnet restore
 RUN dotnet build
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test ./Fiver.Asp.Docker.Basic.Tests
 
 WORKDIR /src/Fiver.Asp.Docker.Basic
