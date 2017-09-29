@@ -8,7 +8,7 @@ namespace Fiver.Asp.Docker.Basic.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Hello from inside Docker!");
+            return Ok("Hello from inside Docker. Random changes to test build 2");
         }
     }
 }
