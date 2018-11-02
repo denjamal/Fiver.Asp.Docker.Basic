@@ -6,7 +6,7 @@ COPY . .
 RUN dotnet restore
 RUN dotnet build
 ENV TEAMCITY_PROJECT_NAME=fake
-RUN dotnet test ./Fiver.Asp.Docker.Basic.Tests
+RUN dotnet test ./Fiver.Asp.Docker.Basic.Tests --verbosity=normal
 
 WORKDIR /src/Fiver.Asp.Docker.Basic
 RUN dotnet publish -o /publish --configuration Release
