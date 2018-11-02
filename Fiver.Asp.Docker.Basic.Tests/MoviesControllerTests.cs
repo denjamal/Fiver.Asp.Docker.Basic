@@ -18,9 +18,7 @@ namespace Fiver.Asp.Docker.Basic.Tests
             // Assert
             var okObjectResult = Assert.IsType<OkObjectResult>(result);
             var outputModel = Assert.IsType<string>(okObjectResult.Value);
-            Assert.Equal(
-                expected: "Hello from inside Docker. Random changes to test build 2",
-                actual: outputModel);
+            Assert.True(false);
         }
     }
 }
